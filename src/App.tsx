@@ -17,29 +17,39 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const setUser = useAuthStore((state) => state.setUser);
-  
+
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
-
+  
+    // Check if user is logged in and log the user ID
+    const session = supabase.auth.getSession(); // get the session
+    session.then(({ data: { user } }) => {
+      if (user) {
+        console.log('Logged in user ID:', user.id);
+      } else {
+        console.log('No user is logged in.');
+      }
+    }).catch(err => console.error('Error fetching session:', err));
+    
     // Set up auth listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setUser(session?.user ?? null);
       }
     );
-
+  
     // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-
+  
     return () => {
       subscription.unsubscribe();
       clearTimeout(timer);
     };
   }, [setUser]);
-  
+
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };

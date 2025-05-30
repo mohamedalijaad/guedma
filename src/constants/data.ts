@@ -6,7 +6,7 @@ export const products: Product[] = [
     id: 1,
     name: 'SmartAero Tower',
     description: 'All-in-one smart agriculture tower with sensors for temperature, humidity, soil moisture, water level, and pH. Solar-powered. Connects to SmartAero mobile app.',
-    image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: '/SmartAero Tower.png', 
     price: 299.99,
     category: 'Main Product',
     features: [
@@ -41,7 +41,7 @@ export const products: Product[] = [
     id: 2,
     name: 'Soil Moisture Sensor Kit',
     description: 'Professional-grade soil moisture sensors with high accuracy and long-term stability. Perfect for precision agriculture.',
-    image: 'https://images.pexels.com/photos/1483880/pexels-photo-1483880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'public/Soil Moisture Sensor Kit.jpg', 
     price: 49.99,
     category: 'Agriculture IoT Devices',
     features: [
@@ -64,7 +64,7 @@ export const products: Product[] = [
     id: 3,
     name: 'Smart Irrigation Controller',
     description: 'Automated irrigation system with smart scheduling and weather adaptation. Save water while maintaining optimal soil moisture.',
-    image: 'https://images.pexels.com/photos/2132780/pexels-photo-2132780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image:'public/Smart Irrigation Controller.jpg', 
     price: 149.99,
     category: 'Agriculture IoT Devices',
     features: [
@@ -87,7 +87,7 @@ export const products: Product[] = [
     id: 4,
     name: 'pH Meter Kit PHO-14',
     description: 'Professional pH measurement kit with digital display and automatic temperature compensation.',
-    image: 'https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'public/pH Meter Kit PHO-14.jpg', 
     price: 79.99,
     category: 'Agriculture IoT Devices',
     features: [
@@ -108,9 +108,9 @@ export const products: Product[] = [
   },
   {
     id: 5,
-    name: 'IoT Weather Station',
-    description: 'Compact weather station with multiple sensors for comprehensive environmental monitoring.',
-    image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Waterproof Temperature Sensor',
+    description: 'It is waterproof, moisture-proof and anti-rust with the high-quality stainless steel tube encapsulated.',
+    image: 'public/temp.jpg', 
     price: 199.99,
     category: 'Agriculture IoT Devices',
     features: [
@@ -133,7 +133,7 @@ export const products: Product[] = [
     id: 6,
     name: 'SmartAero ESP32 IoT Kit',
     description: 'Pre-configured ESP32 development kit with sensors and software for SmartAero integration.',
-    image: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'public/ESP32.jpg', 
     price: 89.99,
     category: 'Agriculture IoT Devices',
     features: [
@@ -156,7 +156,7 @@ export const products: Product[] = [
     id: 7,
     name: 'Sensor Cable Kit',
     description: 'Professional-grade weatherproof cables for sensor installations.',
-    image: 'https://images.pexels.com/photos/2251206/pexels-photo-2251206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+   image: '/cable.png',
     price: 29.99,
     category: 'Accessories & Components',
     features: [
@@ -179,7 +179,7 @@ export const products: Product[] = [
     id: 8,
     name: 'Solar Power Kit',
     description: 'Complete solar power solution for SmartAero devices with battery backup.',
-    image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'public/solar.jpg',
     price: 159.99,
     category: 'Accessories & Components',
     features: [
