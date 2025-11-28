@@ -49,8 +49,8 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ isDarkMode }) => {
                       className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                         location.pathname.includes(item.path)
                           ? isDarkMode
-                            ? 'bg-emerald-600 text-white'
-                            : 'bg-emerald-500 text-white'
+                            ? 'bg-primary-light text-white'
+                            : 'bg-primary text-white'
                           : isDarkMode
                           ? 'hover:bg-gray-700'
                           : 'hover:bg-gray-100'

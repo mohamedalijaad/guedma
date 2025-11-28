@@ -104,7 +104,7 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   return (
     <section className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}>
       <div className="relative h-[40vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
           className="relative text-center z-10 px-4"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Get in <span className="text-emerald-500">Touch</span>
+            Get in <span className="text-primary">Touch</span>
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto">
             Have questions about our products or services? We'd love to hear from you.
@@ -142,15 +142,15 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 >
                   <div className={`p-3 rounded-lg ${
                     isDarkMode ? 'bg-gray-700' : 'bg-white'
-                  } text-emerald-500`}>
+                  } text-primary`}>
                     <MapPin size={24} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Our Location</h3>
                     <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
-                      sidi massoud,<br />
-                      Cité universitaire,<br />
-                      Hiboun 5147
+                      cité olympique,<br />
+                      rue luis braille 1003,<br />
+                      Tunis, Tunisia
                     </p>
                   </div>
                 </motion.div>
@@ -162,13 +162,13 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 >
                   <div className={`p-3 rounded-lg ${
                     isDarkMode ? 'bg-gray-700' : 'bg-white'
-                  } text-emerald-500`}>
+                  } text-primary`}>
                     <Phone size={24} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
                     <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
-                      +216 26531980
+                      +216 24921002
                     </p>
                   </div>
                 </motion.div>
@@ -180,13 +180,13 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 >
                   <div className={`p-3 rounded-lg ${
                     isDarkMode ? 'bg-gray-700' : 'bg-white'
-                  } text-emerald-500`}>
+                  } text-primary`}>
                     <Mail size={24} />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
-                      mohamedali.jaadari@gmail.com
+                      Guedma2025@gmail.com
                     </p>
                   </div>
                 </motion.div>
@@ -196,9 +196,9 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                 <h3 className="font-semibold mb-4">Connect With Us</h3>
                 <div className="flex space-x-4">
                   {[
-                    { icon: Facebook, url: 'https://www.facebook.com/profile.php?id=61568452772855' },
-                    { icon: Instagram, url: 'https://www.instagram.com/smartaero/' },
-                    { icon: Linkedin, url: 'https://www.linkedin.com/company/smartaerotun/' }
+                    { icon: Facebook, url: 'https://www.facebook.com' },
+                    { icon: Instagram, url: 'https://www.instagram.com' },
+                    { icon: Linkedin, url: 'https://www.linkedin.com' }
                   ].map((social, index) => (
                     <motion.a
                       key={index}
@@ -206,8 +206,8 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`p-3 rounded-lg ${
-                        isDarkMode ? 'bg-gray-700 hover:bg-emerald-500' : 'bg-white hover:bg-emerald-500'
-                      } text-emerald-500 hover:text-white transition-all duration-300`}
+                        isDarkMode ? 'bg-gray-700 hover:bg-primary' : 'bg-white hover:bg-primary'
+                      } text-primary hover:text-white transition-all duration-300`}
                       whileHover={{ y: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -238,7 +238,7 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     className={`mb-6 p-4 rounded-lg flex items-center space-x-3 ${
-                      isDarkMode ? 'bg-emerald-500/20 text-emerald-400' : 'bg-emerald-50 text-emerald-600'
+                      isDarkMode ? 'bg-primary/20 text-emerald-400' : 'bg-emerald-50 text-primary-light'
                     }`}
                   >
                     <CheckCircle size={20} />
@@ -272,9 +272,9 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-lg ${
                         isDarkMode
-                          ? 'bg-gray-700 border-gray-600 focus:border-emerald-500'
-                          : 'bg-white border-gray-300 focus:border-emerald-500'
-                      } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors`}
+                          ? 'bg-gray-700 border-gray-600 focus:border-primary'
+                          : 'bg-white border-gray-300 focus:border-primary'
+                      } border focus:ring-2 focus:ring-primary focus:border-transparent transition-colors`}
                       placeholder="Your name"
                     />
                     {errors.name && (
@@ -297,9 +297,9 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                       onChange={handleChange}
                       className={`w-full px-4 py-3 rounded-lg ${
                         isDarkMode
-                          ? 'bg-gray-700 border-gray-600 focus:border-emerald-500'
-                          : 'bg-white border-gray-300 focus:border-emerald-500'
-                      } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors`}
+                          ? 'bg-gray-700 border-gray-600 focus:border-primary'
+                          : 'bg-white border-gray-300 focus:border-primary'
+                      } border focus:ring-2 focus:ring-primary focus:border-transparent transition-colors`}
                       placeholder="your@email.com"
                     />
                     {errors.email && (
@@ -322,9 +322,9 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg ${
                       isDarkMode
-                        ? 'bg-gray-700 border-gray-600 focus:border-emerald-500'
-                        : 'bg-white border-gray-300 focus:border-emerald-500'
-                    } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors`}
+                        ? 'bg-gray-700 border-gray-600 focus:border-primary'
+                        : 'bg-white border-gray-300 focus:border-primary'
+                    } border focus:ring-2 focus:ring-primary focus:border-transparent transition-colors`}
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -352,9 +352,9 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                     rows={6}
                     className={`w-full px-4 py-3 rounded-lg ${
                       isDarkMode
-                        ? 'bg-gray-700 border-gray-600 focus:border-emerald-500'
-                        : 'bg-white border-gray-300 focus:border-emerald-500'
-                    } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors`}
+                        ? 'bg-gray-700 border-gray-600 focus:border-primary'
+                        : 'bg-white border-gray-300 focus:border-primary'
+                    } border focus:ring-2 focus:ring-primary focus:border-transparent transition-colors`}
                     placeholder="Your message..."
                   />
                   {errors.message && (
@@ -373,8 +373,8 @@ const Contact: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                   disabled={submitting}
                   className={`w-full py-4 rounded-lg font-medium flex items-center justify-center space-x-2 ${
                     isDarkMode
-                      ? 'bg-emerald-600 hover:bg-emerald-700'
-                      : 'bg-emerald-500 hover:bg-emerald-600'
+                      ? 'bg-primary-light hover:bg-emerald-700'
+                      : 'bg-primary hover:bg-primary-light'
                   } text-white transition-colors ${
                     submitting ? 'opacity-70 cursor-not-allowed' : ''
                   }`}

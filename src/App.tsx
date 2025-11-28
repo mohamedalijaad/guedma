@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { supabase } from './lib/supabase';
 import { useAuthStore } from './store/authStore';
+
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Journey from './pages/Journey';
-import Shop from './pages/Shop';
+import Fonctionnalites from "./pages/Fonctionnalites";
+import Shop from './pages/Shop'; // Recettes list page
+import RecetteDetails from './pages/RecetteDetails'; // 🔥 ADD THIS
 import Contact from './pages/Contact';
 import Resources from './pages/Resources';
 import Footer from './components/Footer';
@@ -21,54 +23,58 @@ function App() {
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
-  
-    // Check if user is logged in and log the user ID
-    const session = supabase.auth.getSession(); // get the session
-    session.then(({ data: { user } }) => {
-      if (user) {
-        console.log('Logged in user ID:', user.id);
-      } else {
-        console.log('No user is logged in.');
-      }
-    }).catch(err => console.error('Error fetching session:', err));
-    
-    // Set up auth listener
+
+    // Check active session
+    supabase.auth.getSession()
+      .then(({ data: { user } }) => {
+        if (user) console.log("Logged in:", user.id);
+      })
+      .catch(err => console.error('Error fetching session:', err));
+
+    // Listen to auth state
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setUser(session?.user ?? null);
-      }
+      (_, session) => setUser(session?.user ?? null)
     );
-  
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  
+
+    // Simulated loading screen
+    const timer = setTimeout(() => setIsLoading(false), 3000);
+
     return () => {
       subscription.unsubscribe();
       clearTimeout(timer);
     };
   }, [setUser]);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
   return (
     <Router>
       <div className={isDarkMode ? 'dark bg-gray-900' : 'bg-white'}>
+        
         <AnimatePresence>
           {isLoading && <LoadingScreen isDarkMode={isDarkMode} />}
         </AnimatePresence>
+
         <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+
         <Routes>
           <Route path="/" element={<Home isDarkMode={isDarkMode} />} />
-          <Route path="/journey" element={<Journey isDarkMode={isDarkMode} />} />
-          <Route path="/shop/*" element={<Shop isDarkMode={isDarkMode} />} />
+          <Route path="/fonctionnalites" element={<Fonctionnalites isDarkMode={isDarkMode} />} />
+
+          {/* Recettes list */}
+          <Route path="/recettes" element={<Shop isDarkMode={isDarkMode} />} />
+
+          {/* 🔥 Recette details */}
+          <Route 
+            path="/recettes/:id" 
+            element={<RecetteDetails isDarkMode={isDarkMode} />} 
+          />
+
           <Route path="/resources" element={<Resources isDarkMode={isDarkMode} />} />
           <Route path="/contact" element={<Contact isDarkMode={isDarkMode} />} />
           <Route path="/admin/*" element={<AdminDashboard isDarkMode={isDarkMode} />} />
         </Routes>
+
         <Footer isDarkMode={isDarkMode} />
       </div>
     </Router>

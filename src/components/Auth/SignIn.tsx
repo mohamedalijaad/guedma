@@ -63,7 +63,7 @@ const SignIn: React.FC<SignInProps> = ({ isDarkMode, onClose }) => {
             isDarkMode
               ? 'bg-gray-700 border-gray-600 text-white'
               : 'bg-white border-gray-300 text-gray-900'
-          } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent`}
+          } border focus:ring-2 focus:ring-primary focus:border-transparent`}
           required
         />
       </div>
@@ -86,7 +86,7 @@ const SignIn: React.FC<SignInProps> = ({ isDarkMode, onClose }) => {
             isDarkMode
               ? 'bg-gray-700 border-gray-600 text-white'
               : 'bg-white border-gray-300 text-gray-900'
-          } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent`}
+          } border focus:ring-2 focus:ring-primary focus:border-transparent`}
           required
         />
       </div>
@@ -96,8 +96,8 @@ const SignIn: React.FC<SignInProps> = ({ isDarkMode, onClose }) => {
         disabled={loading}
         className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
           isDarkMode
-            ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-            : 'bg-emerald-500 hover:bg-emerald-600 text-white'
+            ? 'bg-primary-light hover:bg-emerald-700 text-white'
+            : 'bg-primary hover:bg-primary-light text-white'
         } ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
       >
         {loading ? 'Signing in...' : 'Sign In'}

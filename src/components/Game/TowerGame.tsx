@@ -47,9 +47,9 @@ const DraggablePart: React.FC<{ part: TowerPart; isToolbox?: boolean }> = ({ par
       } cursor-grab active:cursor-grabbing`}
     >
       <div className={`p-4 rounded-lg flex flex-col items-center justify-center space-y-2 ${
-        isToolbox ? 'bg-emerald-500/20 hover:bg-emerald-500/30' : 'bg-gray-700'
+        isToolbox ? 'bg-primary/20 hover:bg-primary/30' : 'bg-gray-700'
       }`}>
-        <Icon size={24} className="text-emerald-500" />
+        <Icon size={24} className="text-primary" />
         <span className="text-sm font-medium">{part.name}</span>
       </div>
     </motion.div>
@@ -73,7 +73,7 @@ const DroppableSlot: React.FC<{
     <div
       ref={drop}
       className={`h-24 w-full rounded-lg border-2 border-dashed transition-colors ${
-        isOver ? 'border-emerald-500 bg-emerald-500/10' : 'border-gray-600 bg-gray-800/50'
+        isOver ? 'border-primary bg-primary/10' : 'border-gray-600 bg-gray-800/50'
       } flex items-center justify-center`}
     >
       {children}
@@ -152,7 +152,7 @@ const TowerGame: React.FC<TowerGameProps> = ({ isDarkMode }) => {
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold mb-4">
-                Build Your <span className="text-emerald-500">SmartAero Tower</span>
+                Build Your <span className="text-primary">SmartAero Tower</span>
               </h1>
               <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
                 Drag and drop the components to assemble your aeroponic tower!
@@ -165,11 +165,11 @@ const TowerGame: React.FC<TowerGameProps> = ({ isDarkMode }) => {
               {/* Score & Timer */}
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center space-x-2">
-                  <Award className="text-emerald-500" />
+                  <Award className="text-primary" />
                   <span className="font-mono text-xl">{score}</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Timer className="text-emerald-500" />
+                  <Timer className="text-primary" />
                   <span className="font-mono text-xl">{timer}s</span>
                 </div>
               </div>
@@ -211,7 +211,7 @@ const TowerGame: React.FC<TowerGameProps> = ({ isDarkMode }) => {
                     exit={{ opacity: 0, y: -20 }}
                     className="flex items-center space-x-2 p-4 rounded-lg bg-gray-700/50 mb-4"
                   >
-                    <Info size={20} className="text-emerald-500 flex-shrink-0" />
+                    <Info size={20} className="text-primary flex-shrink-0" />
                     <p className="text-sm">{currentTip}</p>
                   </motion.div>
                 )}
@@ -259,7 +259,7 @@ const TowerGame: React.FC<TowerGameProps> = ({ isDarkMode }) => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={startGame}
-                        className="px-6 py-3 bg-emerald-500 text-white rounded-lg font-medium hover:bg-emerald-600 transition-colors"
+                        className="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-light transition-colors"
                       >
                         {gameComplete || timer === 0 ? 'Play Again' : 'Start Game'}
                       </motion.button>

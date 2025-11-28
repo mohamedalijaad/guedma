@@ -8,20 +8,15 @@ export default {
         heading: ['Poppins', 'sans-serif'],
       },
       colors: {
-        emerald: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
-          800: '#065f46',
-          900: '#064e3b',
-          950: '#022c22',
-        }
-      }
+        // 🎨 Guedma brand palette
+        primary: '#7A1F1F',        // deep Tunisian maroon (main color)
+        'primary-light': '#A63A3A',
+        'beige-bg': '#F3E7D6',     // background beige
+        cream: '#FAF3E7',
+        'dark-text': '#2B1A17',
+        'light-text': '#FFFFFF',
+        'accent-green': '#5DAA68', // small accent if needed
+      },
     },
   },
   plugins: [],

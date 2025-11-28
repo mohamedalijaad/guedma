@@ -161,7 +161,7 @@ const IoTDashboard: React.FC<IoTDashboardProps> = ({ isDarkMode }) => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
-                    <div className="p-3 rounded-lg bg-emerald-500/20 text-emerald-500">
+                    <div className="p-3 rounded-lg bg-primary/20 text-primary">
                       <Droplet size={24} />
                     </div>
                     <h3 className="text-xl font-semibold">pH Level</h3>
@@ -169,7 +169,7 @@ const IoTDashboard: React.FC<IoTDashboardProps> = ({ isDarkMode }) => {
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    className="text-emerald-500"
+                    className="text-primary"
                   >
                     <RefreshCw size={20} />
                   </motion.div>
@@ -201,7 +201,7 @@ const IoTDashboard: React.FC<IoTDashboardProps> = ({ isDarkMode }) => {
                 <span className="text-sm">Temperature</span>
               </div>
               <div className="flex items-center space-x-1">
-                <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                <div className="w-3 h-3 rounded-full bg-primary"></div>
                 <span className="text-sm">pH</span>
               </div>
             </div>
@@ -224,7 +224,7 @@ const IoTDashboard: React.FC<IoTDashboardProps> = ({ isDarkMode }) => {
                   <motion.div
                     initial={{ height: 0 }}
                     animate={{ height: `${(data.ph / 14) * 100}%` }}
-                    className="bg-emerald-500/20 rounded-t"
+                    className="bg-primary/20 rounded-t"
                   />
                 </div>
               ))}
@@ -342,7 +342,7 @@ const IoTDashboard: React.FC<IoTDashboardProps> = ({ isDarkMode }) => {
                   </button>
                   <button
                     onClick={() => handleSettingsUpdate(settings)}
-                    className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white transition-colors"
+                    className="px-4 py-2 rounded-lg bg-primary hover:bg-primary-light text-white transition-colors"
                   >
                     Save Changes
                   </button>

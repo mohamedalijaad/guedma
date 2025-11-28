@@ -34,11 +34,11 @@ const AdminStats: React.FC<AdminStatsProps> = ({ isDarkMode }) => {
               <div className="flex items-center justify-between mb-4">
                 <div className={`p-3 rounded-lg ${
                   isDarkMode ? 'bg-gray-600' : 'bg-white'
-                } text-emerald-500`}>
+                } text-primary`}>
                   <Icon size={24} />
                 </div>
                 <span className={`text-sm px-2 py-1 rounded-full ${
-                  isDarkMode ? 'bg-emerald-500/20 text-emerald-400' : 'bg-emerald-100 text-emerald-600'
+                  isDarkMode ? 'bg-primary/20 text-emerald-400' : 'bg-beige-bg text-primary-light'
                 }`}>
                   {stat.trend}
                 </span>

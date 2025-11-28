@@ -22,8 +22,8 @@ const AdminUsers: React.FC<AdminUsersProps> = ({ isDarkMode }) => {
         <h2 className="text-2xl font-semibold">Users Management</h2>
         <button className={`px-4 py-2 rounded-lg flex items-center space-x-2 ${
           isDarkMode
-            ? 'bg-emerald-600 hover:bg-emerald-700'
-            : 'bg-emerald-500 hover:bg-emerald-600'
+            ? 'bg-primary-light hover:bg-emerald-700'
+            : 'bg-primary hover:bg-primary-light'
         } text-white transition-colors`}>
           <UserPlus size={20} />
           <span>Add User</span>
@@ -41,7 +41,7 @@ const AdminUsers: React.FC<AdminUsersProps> = ({ isDarkMode }) => {
               isDarkMode
                 ? 'bg-gray-700 border-gray-600'
                 : 'bg-gray-50 border-gray-300'
-            } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent`}
+            } border focus:ring-2 focus:ring-primary focus:border-transparent`}
           />
           <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
         </div>
@@ -74,8 +74,8 @@ const AdminUsers: React.FC<AdminUsersProps> = ({ isDarkMode }) => {
                   <span className={`px-2 py-1 rounded-full text-sm ${
                     user.role === 'Admin'
                       ? isDarkMode
-                        ? 'bg-emerald-500/20 text-emerald-400'
-                        : 'bg-emerald-100 text-emerald-600'
+                        ? 'bg-primary/20 text-emerald-400'
+                        : 'bg-beige-bg text-primary-light'
                       : isDarkMode
                       ? 'bg-blue-500/20 text-blue-400'
                       : 'bg-blue-100 text-blue-600'

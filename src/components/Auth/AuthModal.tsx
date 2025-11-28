@@ -58,8 +58,8 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, isDarkMode }) =>
                   className={`flex-1 py-2.5 px-4 rounded-lg font-medium transition-colors ${
                     isSignIn
                       ? isDarkMode
-                        ? 'bg-emerald-600 text-white'
-                        : 'bg-emerald-500 text-white'
+                        ? 'bg-primary-light text-white'
+                        : 'bg-primary text-white'
                       : isDarkMode
                       ? 'text-gray-400 hover:bg-gray-800'
                       : 'text-gray-600 hover:bg-gray-100'
@@ -72,8 +72,8 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, isDarkMode }) =>
                   className={`flex-1 py-2.5 px-4 rounded-lg font-medium transition-colors ${
                     !isSignIn
                       ? isDarkMode
-                        ? 'bg-emerald-600 text-white'
-                        : 'bg-emerald-500 text-white'
+                        ? 'bg-primary-light text-white'
+                        : 'bg-primary text-white'
                       : isDarkMode
                       ? 'text-gray-400 hover:bg-gray-800'
                       : 'text-gray-600 hover:bg-gray-100'

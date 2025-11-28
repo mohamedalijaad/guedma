@@ -17,10 +17,10 @@ const Home: React.FC<HomeProps> = ({ isDarkMode }) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Watch Our <span className="text-emerald-500">Launch Video</span>
+              Découvrez Notre <span className="text-primary">Vidéo de Lancement</span>
             </h2>
             <p className={`text-lg ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Experience the future of smart agriculture and home automation
+              Guedma : la nouvelle façon de cuisiner tunisien, simple, authentique et anti-gaspi.
             </p>
           </div>
           <VideoPlayer isDarkMode={isDarkMode} />

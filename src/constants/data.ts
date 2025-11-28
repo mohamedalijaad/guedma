@@ -1,289 +1,261 @@
 import { Product, TeamMember, Feature } from '../types';
 import { Wifi, BarChart2, Globe, Bell, Brain } from 'lucide-react';
 
-export const products: Product[] = [
+export const products = [
   {
     id: 1,
-    name: 'SmartAero Tower',
-    description: 'All-in-one smart agriculture tower with sensors for temperature, humidity, soil moisture, water level, and pH. Solar-powered. Connects to SmartAero mobile app.',
-    image: '/SmartAero Tower.png', 
-    price: 299.99,
-    category: 'Main Product',
-    features: [
-      'Temperature & Humidity Monitoring',
-      'Soil Moisture Sensing',
-      'Water Level Detection',
-      'pH Measurement',
-      'Solar Power System',
-      'Mobile App Integration',
-      'Real-time Data Analytics'
+    name: "Couscous Tunisien à l’Agneau",
+    description: "Le plat traditionnel incontournable : semoule parfumée, légumes mijotés et viande tendre.",
+    image: "/couscous.jpg",
+    features: ["Traditionnel", "Sans gaspillage", "Pour toute la famille"],
+    
+    ingredients: [
+      "250 g de couscous fin",
+      "1 c. à soupe de tomate concentrée",
+      "500 g de viande d’agneau",
+      "1 oignon",
+      "2 clous de girofle",
+      "Huile d’olive",
+      "1 poignée de pois chiches trempés",
+      "Une poignée de raisins secs",
+      "2 poivrons",
+      "1 c. à café de harissa",
+      "2 œufs durs",
+      "2 c. à café de paprika",
+      "2 c. à café de curcuma",
+      "Sel et poivre"
     ],
-    rating: 4.8,
-    reviews: [
-      {
-        id: 1,
-        userId: '1',
-        userName: 'John D.',
-        rating: 5,
-        comment: 'Excellent product, transformed my farming operations!',
-        date: '2025-02-15'
-      }
-    ],
-    specifications: {
-      'Power Source': 'Solar with Battery Backup',
-      'Connectivity': 'WiFi + Bluetooth',
-      'Sensor Range': 'Up to 100m',
-      'Battery Life': '72 hours backup',
-      'Weather Resistance': 'IP67 rated'
-    }
+
+    steps: [
+      "Faire chauffer l’huile dans une marmite, frire poivrons et oignons.",
+      "Retirer les poivrons, ajouter la viande, la tomate concentrée et la harissa.",
+      "Couvrir d’eau chaude, assaisonner et ajouter les clous de girofle.",
+      "Cuire les pois chiches séparément, ajouter les raisins secs et un peu de sauce.",
+      "Préparer la semoule à la vapeur (15–20 min).",
+      "Mélanger le couscous avec la sauce et servir avec viande, œufs, pois chiches et poivrons."
+    ]
   },
+
   {
     id: 2,
-    name: 'Soil Moisture Sensor Kit',
-    description: 'Professional-grade soil moisture sensors with high accuracy and long-term stability. Perfect for precision agriculture.',
-    image: 'public/Soil Moisture Sensor Kit.jpg', 
-    price: 49.99,
-    category: 'Agriculture IoT Devices',
-    features: [
-      'High Accuracy Sensing',
-      'Long-term Stability',
-      'Easy Installation',
-      'Wireless Connectivity',
-      'Mobile App Compatible'
+    name: "Farfoucha au Kadid",
+    description: "Un plat rustique du nord-ouest tunisien, riche en saveurs et très nourrissant.",
+    image: "/farfoucha.jpg",
+    features: ["Traditionnel", "Très parfumé", "Facile à préparer"],
+
+    ingredients: [
+      "300 g de tiges de fenouil (besbess)",
+      "250 g de kadid",
+      "300 g de couscous moyen",
+      "1 oignon",
+      "2 gousses d’ail",
+      "2 c. à soupe de tomate",
+      "1–2 piments secs",
+      "5 c. à soupe d’huile d’olive",
+      "Paprika, curcuma, poivre, sel",
+      "Harissa (optionnel)",
+      "700 ml d’eau"
     ],
-    rating: 4.6,
-    reviews: [],
-    specifications: {
-      'Sensor Type': 'Capacitive',
-      'Range': '0-100% VWC',
-      'Accuracy': '±3%',
-      'Power': '3.3-5V DC'
-    }
+
+    steps: [
+      "Faire revenir oignon, ail, kadid et épices dans l’huile.",
+      "Ajouter la tomate, le piment et les pois chiches si désiré.",
+      "Ajouter les tiges de fenouil et couvrir d’eau.",
+      "Laisser mijoter 30–40 minutes.",
+      "Verser la semoule en pluie, mélanger et laisser cuire jusqu’à absorption.",
+      "Couvrir quelques minutes avant de servir."
+    ]
   },
+
   {
     id: 3,
-    name: 'Smart Irrigation Controller',
-    description: 'Automated irrigation system with smart scheduling and weather adaptation. Save water while maintaining optimal soil moisture.',
-    image:'public/Smart Irrigation Controller.jpg', 
-    price: 149.99,
-    category: 'Agriculture IoT Devices',
-    features: [
-      'Weather-based Scheduling',
-      'Mobile Control',
-      'Water Usage Analytics',
-      'Multiple Zone Control',
-      'Rain Delay Feature'
+    name: "Mloukhia Tunisienne",
+    description: "Un plat emblématique, riche et intense, mijoté longuement pour obtenir une texture brillante.",
+    image: "/mloukhia.jpg",
+    features: ["Très riche", "Cuisson lente", "Saveur profonde"],
+
+    ingredients: [
+      "1 oignon",
+      "3 c. à soupe d’huile d’olive",
+      "2 gousses d’ail",
+      "1 boîte moyenne de concentré de tomate",
+      "2 branches de coriandre",
+      "2 feuilles de laurier",
+      "100 g de poudre de mloukhia",
+      "500 g de viande (bœuf ou agneau)",
+      "Sel, poivre, piment vert"
     ],
-    rating: 4.7,
-    reviews: [],
-    specifications: {
-      'Zones': 'Up to 8',
-      'WiFi': '2.4GHz',
-      'Weather Data': 'Real-time',
-      'Scheduling': 'Smart AI-based'
-    }
+
+    steps: [
+      "Mélanger ail, épices et tomate, enduire la viande.",
+      "Faire revenir l’oignon dans l’huile puis ajouter la poudre de mloukhia.",
+      "Ajouter progressivement de l’eau chaude pour obtenir une texture crémeuse.",
+      "Ajouter la viande, tomate, laurier.",
+      "Cuire à feu très doux pendant 5 heures.",
+      "Arrêter quand la mloukhia devient brillante et l’huile remonte en surface."
+    ]
   },
+
   {
     id: 4,
-    name: 'pH Meter Kit PHO-14',
-    description: 'Professional pH measurement kit with digital display and automatic temperature compensation.',
-    image: 'public/pH Meter Kit PHO-14.jpg', 
-    price: 79.99,
-    category: 'Agriculture IoT Devices',
-    features: [
-      'Digital Display',
-      'Auto Temperature Compensation',
-      'Quick Readings',
-      'Calibration Solution Included',
-      'Waterproof Design'
+    name: "Ojja au Merguez",
+    description: "Plat rapide et gourmand : tomates, œufs, merguez et épices.",
+    image: "/ojja.jpg",
+    features: ["Rapide", "Épicé", "Gourmand"],
+
+    ingredients: [
+      "4 merguez",
+      "4 tomates mûres",
+      "1 poivron vert",
+      "2 gousses d’ail",
+      "4 œufs",
+      "1 c. à café de harissa",
+      "1 c. à café de paprika",
+      "Sel, poivre, huile d’olive"
     ],
-    rating: 4.5,
-    reviews: [],
-    specifications: {
-      'Range': '0-14 pH',
-      'Accuracy': '±0.01 pH',
-      'Response Time': '≤1 minute',
-      'Battery Life': '2000 hours'
-    }
+
+    steps: [
+      "Faire revenir les merguez en morceaux avec l’ail.",
+      "Ajouter les tomates, le poivron, la harissa et le paprika.",
+      "Laisser mijoter jusqu'à épaississement.",
+      "Casser les œufs par-dessus, couvrir et cuire 5 minutes.",
+      "Servir chaud avec du pain frais."
+    ]
   },
+
   {
     id: 5,
-    name: 'Waterproof Temperature Sensor',
-    description: 'It is waterproof, moisture-proof and anti-rust with the high-quality stainless steel tube encapsulated.',
-    image: 'public/temp.jpg', 
-    price: 199.99,
-    category: 'Agriculture IoT Devices',
-    features: [
-      'Temperature Monitoring',
-      'Humidity Sensing',
-      'Wind Speed & Direction',
-      'Rainfall Measurement',
-      'Solar Radiation'
+    name: "Riz Djerbien (Rouz Jerbi)",
+    description: "Plat vapeur du sud tunisien, riche en herbes et en saveurs.",
+    image: "/rouzjerbi.jpg",
+    features: ["Cuit à la vapeur", "Très parfumé", "Version saine"],
+
+    ingredients: [
+      "500 g de riz",
+      "400 g de viande (agneau, bœuf ou poulet)",
+      "1 oignon",
+      "2 gousses d’ail",
+      "1 c. à soupe de concentré de tomate",
+      "1 c. à café d’harissa",
+      "Curcuma, paprika, sel, poivre",
+      "Persil et épinards hachés",
+      "2 c. à soupe d’huile d’olive"
     ],
-    rating: 4.8,
-    reviews: [],
-    specifications: {
-      'Sensors': '7 integrated',
-      'Power': 'Solar + Battery',
-      'Range': '100m wireless',
-      'Updates': 'Every 5 minutes'
-    }
+
+    steps: [
+      "Mélanger tous les ingrédients dans un saladier.",
+      "Ajouter un demi-verre d’eau et bien enrober le riz.",
+      "Cuire dans le haut du couscoussier pendant 45–60 minutes.",
+      "Mélanger en cours de cuisson pour éviter les amas.",
+      "Servir chaud avec un filet d’huile d’olive."
+    ]
   },
+
   {
     id: 6,
-    name: 'SmartAero ESP32 IoT Kit',
-    description: 'Pre-configured ESP32 development kit with sensors and software for SmartAero integration.',
-    image: 'public/ESP32.jpg', 
-    price: 89.99,
-    category: 'Agriculture IoT Devices',
-    features: [
-      'Pre-configured Setup',
-      'Multiple Sensors',
-      'Development Guide',
-      'SmartAero Compatible',
-      'Example Projects'
+    name: "Marqa Jelbana (Ragoût de Petits Pois et Poulet)",
+    description: "Ragoût de petits pois au poulet, typiquement servi au printemps.",
+    image: "/jelbana.jpg",
+    features: ["Familial", "Léger", "Facile"],
+
+    ingredients: [
+      "1 kg de poulet",
+      "400 g de petits pois",
+      "3 carottes",
+      "1 oignon",
+      "1 c. à soupe de tomate concentrée",
+      "1 c. à café d’harissa",
+      "1 c. à café de curcuma",
+      "1 poivron vert",
+      "Huile d’olive, sel, poivre"
     ],
-    rating: 4.6,
-    reviews: [],
-    specifications: {
-      'Processor': 'ESP32-WROOM',
-      'Memory': '4MB Flash',
-      'Connectivity': 'WiFi + BLE',
-      'Sensors': '5 included'
-    }
-  },
-  {
-    id: 7,
-    name: 'Sensor Cable Kit',
-    description: 'Professional-grade weatherproof cables for sensor installations.',
-   image: '/cable.png',
-    price: 29.99,
-    category: 'Accessories & Components',
-    features: [
-      'Weatherproof Design',
-      'UV Resistant',
-      'Multiple Lengths',
-      'Color Coded',
-      'Strain Relief'
-    ],
-    rating: 4.7,
-    reviews: [],
-    specifications: {
-      'Length': '5m/cable',
-      'Rating': 'IP67',
-      'Temperature': '-40°C to 80°C',
-      'Conductor': 'Copper'
-    }
-  },
-  {
-    id: 8,
-    name: 'Solar Power Kit',
-    description: 'Complete solar power solution for SmartAero devices with battery backup.',
-    image: 'public/solar.jpg',
-    price: 159.99,
-    category: 'Accessories & Components',
-    features: [
-      'Solar Panel',
-      'Battery Pack',
-      'Charge Controller',
-      'Mounting Hardware',
-      'Installation Guide'
-    ],
-    rating: 4.8,
-    reviews: [],
-    specifications: {
-      'Panel Power': '20W',
-      'Battery': '10000mAh',
-      'Output': '5V/12V DC',
-      'Runtime': '72h backup'
-    }
+
+    steps: [
+      "Faire revenir poulet, oignon et huile dans une cocotte.",
+      "Ajouter harissa, curcuma, tomate et un verre d’eau.",
+      "Laisser cuire 5 minutes.",
+      "Ajouter petits pois, carottes et poivrons.",
+      "Laisser mijoter 40–50 minutes.",
+      "Servir chaud avec du pain ou du riz."
+    ]
   }
 ];
 
-export const teamMembers: TeamMember[] = [
-  {
-    id: 1,
-    name: 'Med Ghaith Romdhani',
-    role: 'Co-Founder & Lead R&D',
-    image: '/ghaith.jpg',
-    linkedinUrl: 'https://www.linkedin.com/in/mohamedghaithromdhani/'
-  },
-  {
-    id: 2,
-    name: 'Mohamed Ali Jaadari',
-    role: 'Co-Founder & Lead Developer',
-    image: '/me.jpg',
-    linkedinUrl: 'https://www.linkedin.com/in/mohamed-ali-jaadari-191b9412b/'
-  },
-  {
-    id: 3,
-    name: 'Aziz Ben Salem',
-    role: 'Co-Founder & Lead Developer',
-    image: '/aziz.jpg',
-    linkedinUrl: 'https://www.linkedin.com/in/aziz-ben-salem-5946842b3/'
-  },
-  {
-    id: 4,
-    name: 'Oumayma Nacib',
-    role: 'Co-Founder & Finance Manager',
-    image: '/ncib.jpg',
-    linkedinUrl: 'https://www.linkedin.com/in/oumayma-nacib-b25622329/'
-  },
-  {
-    id: 5,
-    name: 'Yassine Ben Younes',
-    role: 'Co-Founder & Media Manager',
-    image: '/yassin.jpg',
-    linkedinUrl: 'https://www.linkedin.com/in/yassine-ben-younes-9537ba1b9/'
-  }
-];
+
 
 export const features: Feature[] = [
   {
     id: 1,
-    title: 'Wireless Sensor Connection',
-    description: 'Our ESP32 Wi-Fi enabled devices connect seamlessly to your network, ensuring reliable data transmission without complicated wiring.',
-    icon: 'Wifi'
+    title: "Scan intelligent des ingrédients",
+    description:
+      "Prenez une photo ou entrez vos ingrédients, Guedma analyse automatiquement ce que vous avez.",
+    icon: "Scan",
+    image: "/fonctionnalites/scan.jpg"
   },
   {
     id: 2,
-    title: 'Data Visualization',
-    description: 'Comprehensive charts and logs help you understand trends and make informed decisions based on historical and real-time data.',
-    icon: 'BarChart2'
+    title: "Recettes personnalisées",
+    description:
+      "Des recettes tunisiennes adaptées à vos goûts, votre temps et vos ingrédients disponibles.",
+    icon: "ChefHat",
+    image: "/fonctionnalites/recettes.jpg"
   },
   {
     id: 3,
-    title: 'Remote Control',
-    description: 'Take action from anywhere in the world with our web and mobile apps, providing complete control over your environment.',
-    icon: 'Globe'
+    title: "Liste d’achats automatique",
+    description:
+      "Votre liste se génère toute seule selon les ingrédients manquants. Simple et pratique.",
+    icon: "ShoppingCart",
+    image: "/fonctionnalites/liste.jpg"
   },
   {
     id: 4,
-    title: 'Real-time Alerts',
-    description: 'Receive instant notifications when environmental conditions change, allowing for immediate response to critical situations.',
-    icon: 'Bell'
+    title: "Astuces anti-gaspillage",
+    description:
+      "Transformez vos restes grâce à nos astuces intelligentes anti-gaspi.",
+    icon: "Sprout",
+    image: "/fonctionnalites/gaspi.jpg"
   },
   {
     id: 5,
-    title: 'AI-powered Insights',
-    description: 'Our intelligent system analyzes data patterns to provide recommendations for optimal environmental conditions.',
-    icon: 'Brain'
+    title: "Cuisine tunisienne authentique",
+    description:
+      "Explorez des recettes tunisiennes certifiées authentiques, riches en tradition.",
+    icon: "BookOpen",
+    image: "/fonctionnalites/authentique.jpg"
+  },
+  {
+    id: 6,
+    title: "Interface simple et moderne",
+    description:
+      "Un design fluide, intuitif et inspiré des couleurs tunisiennes. Mode sombre inclus.",
+    icon: "Lightbulb",
+    image: "/fonctionnalites/interface.jpg"
   }
 ];
 
+
+import { 
+  Scan, 
+  ChefHat, 
+  ShoppingCart, 
+  Sprout, 
+  BookOpen 
+} from 'lucide-react';
+
 export const getFeatureIcon = (iconName: string) => {
   switch (iconName) {
-    case 'Wifi':
-      return Wifi;
-    case 'BarChart2':
-      return BarChart2;
-    case 'Globe':
-      return Globe;
-    case 'Bell':
-      return Bell;
-    case 'Brain':
-      return Brain;
+    case 'Scan':
+      return Scan;
+    case 'ChefHat':
+      return ChefHat;
+    case 'ShoppingCart':
+      return ShoppingCart;
+    case 'Sprout':
+      return Sprout;
+    case 'BookOpen':
+      return BookOpen;
     default:
-      return Wifi;
+      return ChefHat;
   }
 };

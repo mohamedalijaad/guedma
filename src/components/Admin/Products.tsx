@@ -16,8 +16,8 @@ const AdminProducts: React.FC<AdminProductsProps> = ({ isDarkMode }) => {
         <h2 className="text-2xl font-semibold">Products Management</h2>
         <button className={`px-4 py-2 rounded-lg flex items-center space-x-2 ${
           isDarkMode
-            ? 'bg-emerald-600 hover:bg-emerald-700'
-            : 'bg-emerald-500 hover:bg-emerald-600'
+            ? 'bg-primary-light hover:bg-emerald-700'
+            : 'bg-primary hover:bg-primary-light'
         } text-white transition-colors`}>
           <Plus size={20} />
           <span>Add Product</span>
@@ -35,7 +35,7 @@ const AdminProducts: React.FC<AdminProductsProps> = ({ isDarkMode }) => {
               isDarkMode
                 ? 'bg-gray-700 border-gray-600'
                 : 'bg-gray-50 border-gray-300'
-            } border focus:ring-2 focus:ring-emerald-500 focus:border-transparent`}
+            } border focus:ring-2 focus:ring-primary focus:border-transparent`}
           />
           <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
         </div>

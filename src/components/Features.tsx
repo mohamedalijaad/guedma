@@ -44,6 +44,8 @@ const Features: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
       className={`py-20 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}
     >
       <div className="container mx-auto px-4">
+        
+        {/* 🔥 Section Title */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -55,20 +57,24 @@ const Features: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             className="text-3xl md:text-4xl font-bold mb-4" 
             variants={itemVariants}
           >
-            Key <span className="text-emerald-500">Features</span>
+            Fonctionnalités <span className="text-primary">Principales</span>
           </motion.h2>
           
-          <motion.div className="w-20 h-1 bg-emerald-500 mx-auto mb-8" variants={itemVariants}></motion.div>
+          <motion.div 
+            className="w-20 h-1 bg-primary mx-auto mb-8" 
+            variants={itemVariants}
+          ></motion.div>
           
           <motion.p 
             className="text-base md:text-lg" 
             variants={itemVariants}
           >
-            Explore the innovative capabilities that make SmartAero the leading choice for 
-            smart agriculture and home automation.
+            Découvrez ce que Guedma peut faire pour vous : des recettes adaptées à vos ingrédients, 
+            un gain de temps et une cuisine tunisienne toujours à portée de main.
           </motion.p>
         </motion.div>
         
+        {/* 🔥 Features List */}
         <div className="max-w-6xl mx-auto">
           <div className="space-y-16">
             {features.map((feature, index) => {
@@ -85,10 +91,12 @@ const Features: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                   viewport={{ once: true, amount: 0.3 }}
                   className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-12`}
                 >
+                  
+                  {/* Icon */}
                   <div className={`w-full md:w-1/3 flex justify-center ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
                     <motion.div 
                       className={`w-24 h-24 rounded-full flex items-center justify-center ${
-                        isDarkMode ? 'bg-emerald-600' : 'bg-emerald-100'
+                        isDarkMode ? 'bg-primary-light' : 'bg-beige-bg'
                       }`}
                       whileHover={{ 
                         scale: 1.1,
@@ -98,13 +106,16 @@ const Features: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                     >
                       <IconComponent 
                         size={48} 
-                        className={isDarkMode ? 'text-white' : 'text-emerald-600'} 
+                        className={isDarkMode ? 'text-white' : 'text-primary-light'} 
                       />
                     </motion.div>
                   </div>
                   
+                  {/* Text */}
                   <div className="w-full md:w-2/3 text-center md:text-left">
-                    <h3 className="text-2xl font-semibold mb-3">{feature.title}</h3>
+                    <h3 className="text-2xl font-semibold mb-3">
+                      {feature.title}
+                    </h3>
                     <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                       {feature.description}
                     </p>
@@ -114,6 +125,7 @@ const Features: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
             })}
           </div>
         </div>
+
       </div>
     </section>
   );

@@ -19,65 +19,44 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({ isDarkMode }) =
       className="absolute inset-0 pointer-events-none"
       options={{
         background: {
-          color: {
-            value: "transparent",
-          },
+          color: { value: "transparent" },
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         interactivity: {
           events: {
-            onHover: {
-              enable: true,
-              mode: "grab",
-            },
+            onHover: { enable: true, mode: "grab" },
             resize: true,
           },
           modes: {
-            grab: {
-              distance: 140,
-              line_linked: {
-                opacity: 0.5,
-              },
-            },
+            grab: { distance: 140, line_linked: { opacity: 0.5 } },
           },
         },
         particles: {
           color: {
-            value: isDarkMode ? "#10B981" : "#059669",
+            value: isDarkMode ? "#A63A3A" : "#7A1F1F",  // RED THEME
           },
           links: {
-            color: isDarkMode ? "#10B981" : "#059669",
+            color: isDarkMode ? "#A63A3A" : "#7A1F1F",
             distance: 150,
             enable: true,
-            opacity: 0.3,
-            width: 1,
+            opacity: 0.35,
+            width: 1.2,
           },
           move: {
             direction: "none",
             enable: true,
-            outModes: {
-              default: "bounce",
-            },
+            outModes: { default: "bounce" },
             random: false,
-            speed: 1,
+            speed: 0.6,
             straight: false,
           },
           number: {
-            density: {
-              enable: true,
-              area: 800,
-            },
+            density: { enable: true, area: 900 },
             value: 80,
           },
-          opacity: {
-            value: 0.3,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 1, max: 3 },
-          },
+          opacity: { value: 0.3 },
+          shape: { type: "circle" },
+          size: { value: { min: 1, max: 3 } },
         },
         detectRetina: true,
       }}
