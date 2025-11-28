@@ -1,4 +1,4 @@
-// ✅ FINAL CLEAN GUEDMA NAVBAR (FULL RED THEME APPLIED)
+// ✅ FIXED – FULLY RESPONSIVE GUEDMA NAVBAR
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -20,14 +20,12 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const user = useAuthStore((state) => state.user);
   const signOut = useAuthStore((state) => state.signOut);
 
-  // Scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu when navigating
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -49,27 +47,32 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
   return (
     <>
+      {/* NAVBAR WRAPPER */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300 ${
           scrolled ? 'nav-scrolled' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto relative">
-          <div className="relative rounded-full overflow-hidden">
 
-            {/* RED GRADIENT BACKGROUND */}
+          {/* DESKTOP NAVBAR */}
+          <div className="relative rounded-full overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 backdrop-blur-xl"></div>
             <div className="absolute inset-0 rounded-full border border-primary/30"></div>
 
-            <div className={`relative px-6 py-3 ${isDarkMode ? 'bg-gray-900/90' : 'bg-white/90'} backdrop-blur-lg`}>
+            <div
+              className={`relative px-6 py-3 ${
+                isDarkMode ? 'bg-gray-900/90' : 'bg-white/90'
+              } backdrop-blur-lg`}
+            >
               <div className="flex items-center justify-between">
 
-                {/* Logo */}
+                {/* LOGO */}
                 <Link to="/" className="flex items-center space-x-2">
                   <img src="/logo.png" alt="Guedma" className="h-12" />
                 </Link>
 
-                {/* DESKTOP NAV */}
+                {/* DESKTOP NAVIGATION */}
                 <div className="hidden md:flex items-center space-x-8">
                   {navLinks.map((link) => (
                     <Link
@@ -91,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
                     </Link>
                   ))}
 
-                  {/* LOGIN / LOGOUT */}
+                  {/* LOGIN BUTTON */}
                   <button
                     onClick={handleAuthClick}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
@@ -104,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
                     <span>{user ? 'Se déconnecter' : 'Se connecter'}</span>
                   </button>
 
-                  {/* THEME TOGGLE */}
+                  {/* THEME SWITCH */}
                   <button
                     onClick={toggleDarkMode}
                     className={`p-2 rounded-full transition-colors ${
@@ -143,56 +146,57 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
               </div>
             </div>
           </div>
-
-          {/* MOBILE MENU */}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                className={`absolute top-full left-0 right-0 mt-2 rounded-2xl overflow-hidden shadow-lg border border-primary/20 ${
-                  isDarkMode ? 'bg-gray-900/95' : 'bg-white/95'
-                } backdrop-blur-lg`}
-              >
-                <div className="p-4 space-y-3">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      to={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`block px-4 py-2 rounded-lg transition-all duration-300 ${
-                        location.pathname === link.href
-                          ? isDarkMode
-                            ? 'bg-primary/30 text-primary-light'
-                            : 'bg-primary/10 text-primary'
-                          : isDarkMode
-                          ? 'text-white hover:bg-gray-800'
-                          : 'text-gray-600 hover:bg-gray-100'
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-
-                  <button
-                    onClick={handleAuthClick}
-                    className={`w-full flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-                      isDarkMode
-                        ? 'bg-primary-light hover:bg-primary'
-                        : 'bg-primary hover:bg-primary-light'
-                    } text-white`}
-                  >
-                    <LogIn size={18} />
-                    <span>{user ? 'Se déconnecter' : 'Se connecter'}</span>
-                  </button>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
       </nav>
 
+      {/* 🚨 FULLSCREEN MOBILE MENU — FIXED & OUTSIDE NAVBAR */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            className={`fixed top-20 left-0 right-0 z-[999] px-4 py-4 rounded-b-2xl shadow-lg border border-primary/20 
+              ${isDarkMode ? 'bg-gray-900/95' : 'bg-white/95'} backdrop-blur-xl`}
+          >
+            <div className="p-4 space-y-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-2 rounded-lg transition-all duration-300 ${
+                    location.pathname === link.href
+                      ? isDarkMode
+                        ? 'bg-primary/30 text-primary-light'
+                        : 'bg-primary/10 text-primary'
+                      : isDarkMode
+                      ? 'text-white hover:bg-gray-800'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              {/* LOGIN */}
+              <button
+                onClick={handleAuthClick}
+                className={`w-full flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+                  isDarkMode
+                    ? 'bg-primary-light hover:bg-primary'
+                    : 'bg-primary hover:bg-primary-light'
+                } text-white`}
+              >
+                <LogIn size={18} />
+                <span>{user ? 'Se déconnecter' : 'Se connecter'}</span>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* AUTH MODAL */}
       <AuthModal
         isOpen={isAuthModalOpen}
         onClose={() => setIsAuthModalOpen(false)}
